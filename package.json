@@ -5,9 +5,19 @@
 	"icon": "resources/app.png",
 	"version": "0.0.1",
 	"preview": true,
-	"keywords": ["Markdown", "Table"],
+	"keywords": [
+		"Markdown",
+		"Table"
+	],
 	"engines": {
 		"vscode": "^1.45.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/clover-plpl/vsc-md-table-editor.git"
+	},
+	"bugs": {
+		"url": "https://github.com/clover-plpl/vsc-md-table-editor/issues"
 	},
 	"categories": [
 		"Other"
@@ -26,7 +36,7 @@
 				}
 			]
 		},
-		"configuration":[
+		"configuration": [
 			{
 				"title": "MdTableEditor config",
 				"properties": {
@@ -59,7 +69,6 @@
 			}
 		],
 		"commands": [
-
 			{
 				"category": "MdTableEditor.edit",
 				"command": "MdTableEditor.fillCells",
@@ -88,9 +97,6 @@
 				"command": "MdTableEditor.deleteComment",
 				"title": "%MdTableEditor.deleteComment%"
 			},
-
-
-
 			{
 				"category": "MdTableEditor.align",
 				"command": "MdTableEditor.changeAlignLeft",
@@ -118,8 +124,6 @@
 					"light": "./resources/icon/align/align-light-black.svg"
 				}
 			},
-
-
 			{
 				"category": "MdTableEditor.insert",
 				"command": "MdTableEditor.insertLeft",
@@ -156,10 +160,6 @@
 					"light": "./resources/icon/insert/right-light.svg"
 				}
 			},
-
-
-
-
 			{
 				"category": "NdTableEditor.remove",
 				"command": "MdTableEditor.removeColumn",
@@ -178,10 +178,6 @@
 					"light": "./resources/icon/remove/remove-row-black.svg"
 				}
 			},
-
-
-
-
 			{
 				"command": "MdTableEditor.moveLeft",
 				"enablement": "MdTableEditor.moveLeft",
@@ -218,11 +214,6 @@
 					"light": "./resources/icon/move/right-light.svg"
 				}
 			},
-
-
-
-
-
 			{
 				"command": "MdTableEditor.focusLeft",
 				"enablement": "MdTableEditor.focusLeft",
@@ -259,8 +250,6 @@
 					"light": "./resources/icon/focus/right-light.svg"
 				}
 			},
-
-
 			{
 				"command": "MdTableEditor.columnSelect",
 				"enablement": "MdTableEditor.columnSelect",
@@ -288,8 +277,6 @@
 					"light": "./resources/icon/select/multi-select-empty-black.svg"
 				}
 			},
-
-
 			{
 				"command": "MdTableEditor.sortNumberAsc",
 				"enablement": "MdTableEditor.sortNumberAsc",
@@ -308,7 +295,6 @@
 					"light": "./resources/icon/sort/sort-number-desc-black.svg"
 				}
 			},
-
 			{
 				"command": "MdTableEditor.sortTextAsc",
 				"enablement": "MdTableEditor.sortTextAsc",
@@ -345,20 +331,12 @@
 					"light": "./resources/icon/sort/sort-text-desc-ignore-black.svg"
 				}
 			},
-
 			{
 				"command": "MdTableEditor.scroll",
 				"title": "スクロール"
 			}
-
-
-
-
-
-
-
 		],
-		"keybindings":[
+		"keybindings": [
 			{
 				"command": "MdTableEditor.fillCells",
 				"key": "shift+ctrl+c"
@@ -386,7 +364,6 @@
 		],
 		"menus": {
 			"editor/context": [
-
 				{
 					"group": "MdTableEditor.edit",
 					"command": "MdTableEditor.fillCells",
@@ -407,14 +384,11 @@
 					"command": "MdTableEditor.deleteComment",
 					"when": "editorLangId == markdown && MdTableEditor.deleteComment"
 				},
-
-
 				{
 					"group": "MdTableEditor.move",
 					"command": "MdTableEditor.moveLeft",
 					"when": "editorLangId == markdown && MdTableEditor.moveLeft"
 				},
-				
 				{
 					"group": "MdTableEditor.move",
 					"command": "MdTableEditor.moveTop",
@@ -430,8 +404,6 @@
 					"command": "MdTableEditor.moveRight",
 					"when": "editorLangId == markdown && MdTableEditor.moveRight"
 				},
-
-
 				{
 					"group": "MdTableEditor.changeAlign",
 					"command": "MdTableEditor.changeAlignRight",
@@ -447,10 +419,6 @@
 					"command": "MdTableEditor.changeAlignLeft",
 					"when": "editorLangId == markdown && MdTableEditor.changeAlignLeft"
 				},
-
-
-
-
 				{
 					"group": "MdTableEditor.insert",
 					"command": "MdTableEditor.insertTop",
@@ -471,8 +439,6 @@
 					"command": "MdTableEditor.insertRight",
 					"when": "editorLangId == markdown && MdTableEditor.insertRight"
 				},
-
-
 				{
 					"group": "MdTableEditor.columnSelect",
 					"command": "MdTableEditor.columnSelect",
@@ -488,9 +454,6 @@
 					"command": "MdTableEditor.columnSelectEmpty",
 					"when": "editorLangId == markdown && MdTableEditor.columnSelectEmpty"
 				},
-
-
-
 				{
 					"group": "MdTableEditor.remove",
 					"command": "MdTableEditor.removeColumn",
@@ -501,8 +464,6 @@
 					"command": "MdTableEditor.removeRow",
 					"when": "editorLangId == markdown && MdTableEditor.removeRow"
 				},
-
-
 				{
 					"group": "MdTableEditor.sort",
 					"command": "MdTableEditor.sortNumberAsc",
@@ -513,8 +474,6 @@
 					"command": "MdTableEditor.sortNumberDesc",
 					"when": "editorLangId == markdown && MdTableEditor.sortNumberDesc"
 				},
-
-
 				{
 					"group": "MdTableEditor.sortText",
 					"command": "MdTableEditor.sortTextAsc",
@@ -535,12 +494,8 @@
 					"command": "MdTableEditor.sortTextDesc.ignore",
 					"when": "editorLangId == markdown && MdTableEditor.sortTextDesc.ignore"
 				}
-
-
-
 			],
-			"editor/title":[
-				
+			"editor/title": [
 				{
 					"command": "MdTableEditor.fillCells",
 					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
@@ -566,8 +521,6 @@
 					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
 					"group": "navigation@203"
 				},
-
-
 				{
 					"command": "MdTableEditor.moveLeft",
 					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
@@ -588,9 +541,6 @@
 					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
 					"group": "navigation@304"
 				},
-
-
-
 				{
 					"command": "MdTableEditor.insertLeft",
 					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
@@ -611,8 +561,6 @@
 					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
 					"group": "navigation@404"
 				},
-
-
 				{
 					"command": "MdTableEditor.removeRow",
 					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
@@ -623,7 +571,6 @@
 					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
 					"group": "navigation@601"
 				},
-
 				{
 					"command": "MdTableEditor.sortNumberAsc",
 					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
@@ -634,7 +581,6 @@
 					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
 					"group": "navigation@702"
 				},
-				
 				{
 					"command": "MdTableEditor.sortTextAsc.ignore",
 					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
@@ -645,7 +591,6 @@
 					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
 					"group": "navigation@704"
 				},
-				
 				{
 					"command": "MdTableEditor.sortTextAsc",
 					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
@@ -656,7 +601,6 @@
 					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
 					"group": "navigation@706"
 				},
-				
 				{
 					"command": "MdTableEditor.columnSelect",
 					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
@@ -682,17 +626,16 @@
 		"postinstall": "node ./node_modules/vscode/bin/install",
 		"test": "npm run compile && node ./node_modules/vscode/bin/test"
 	},
-
 	"devDependencies": {
-		"vscode": "^1.1.25",
-		"@types/glob": "^7.1.1",
-		"@types/mocha": "^5.2.7",
-		"@types/node": "^12.11.7",
-		"@types/vscode": "^1.45.0",
-		"glob": "^7.1.5",
-		"mocha": "^6.2.2",
-		"typescript": "^3.6.4",
-		"tslint": "^5.20.0",
-		"vscode-test": "^1.2.2"
+		"vscode": "^1.1.37",
+		"@types/glob": "^7.1.2",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^14.0.11",
+		"@types/vscode": "^1.45.1",
+		"glob": "^7.1.6",
+		"mocha": "^7.2.0",
+		"typescript": "^3.9.5",
+		"tslint": "^6.1.2",
+		"vscode-test": "^1.4.0"
 	}
 }
