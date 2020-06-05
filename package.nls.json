@@ -1,0 +1,49 @@
+{
+    "MdTableEditor.fillCells": "Fill Cells",
+    "MdTableEditor.beautifulFormat": "Beautiful Format",
+    "MdTableEditor.naturalFormat": "Natural Format",
+    "MdTableEditor.deleteComment": "Delete Comment",
+
+    "MdTableEditor.changeAlignLeft": "Left Align",
+    "MdTableEditor.changeAlignCenter": "Center Align",
+    "MdTableEditor.changeAlignRight": "Align Right",
+
+    "MdTableEditor.insertLeft": "Insert Left",
+    "MdTableEditor.insertTop": "Insert Top",
+    "MdTableEditor.insertBottom": "Insert Bottom",
+    "MdTableEditor.insertRight": "Insert Right",
+
+    "MdTableEditor.removeColumn": "Remove Column",
+    "MdTableEditor.removeRow": "Remove Row",
+
+    "MdTableEditor.moveLeft": "Move Left Column",
+    "MdTableEditor.moveTop": "Move Top Row",
+    "MdTableEditor.moveBottom": "Move Bottom Row",
+    "MdTableEditor.moveRight": "Move Right Column",
+
+
+    "MdTableEditor.focusLeft": "Focus Left Column",
+    "MdTableEditor.focusTop": "Focus Top Column",
+    "MdTableEditor.focusBottom": "Focus Bottom Column",
+    "MdTableEditor.focusRight": "Focus Right Column",
+
+
+    "MdTableEditor.columnSelect": "Select columns",
+    "MdTableEditor.columnSelectAll": "Select all columns",
+    "MdTableEditor.columnSelectEmpty": "Select empty columns",
+
+    "MdTableEditor.sortNumberAsc": "Sort Number Asc",
+    "MdTableEditor.sortNumberDesc": "Sort Number Desc",
+    "MdTableEditor.sortTextAsc": "Sort Text Asc",
+    "MdTableEditor.sortTextDesc": "Sort Text Desc",
+    "MdTableEditor.sortTextAsc.ignore": "Sort Text Asc (ignore)",
+    "MdTableEditor.sortTextDesc.ignore": "Sort Text Desc (ignore)",
+
+    "MdTableEditor.Config.isDebugMode": "Debug mode",
+    "MdTableEditor.Config.isIconMenuEnabled": "Show icon menu",
+    "MdTableEditor.Config.isAutoFormatterEnabled": "Enable auto format",
+    "MdTableEditor.Config.isTreeViewEnabled": "Show Markdown table explorer",
+    "MdTableEditor.Config.isHighlighterEnabled": "Enable highlight",
+    
+    "MdTableEditor.Labels.MarkdownTableExplorer": "Markdown Table Explorer"
+}

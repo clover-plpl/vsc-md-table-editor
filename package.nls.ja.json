@@ -1,0 +1,50 @@
+{
+    "MdTableEditor.fillCells": "テーブルのセルをすべて埋める",
+    "MdTableEditor.beautifulFormat": "奇麗にフォーマット",
+    "MdTableEditor.naturalFormat": "自然にフォーマット",
+    "MdTableEditor.deleteComment": "コメントの削除",
+
+    "MdTableEditor.changeAlignLeft": "左添え",
+    "MdTableEditor.changeAlignCenter": "中央添え",
+    "MdTableEditor.changeAlignRight": "右添え",
+
+    "MdTableEditor.insertLeft": "カラムを左に追加",
+    "MdTableEditor.insertTop": "行を上に追加",
+    "MdTableEditor.insertBottom": "行を下に追加",
+    "MdTableEditor.insertRight": "カラムを右に追加",
+
+    "MdTableEditor.removeColumn": "カラムを削除",
+    "MdTableEditor.removeRow": "行を削除",
+
+    "MdTableEditor.moveLeft": "カラムを左へ移動",
+    "MdTableEditor.moveTop": "行を上へ移動",
+    "MdTableEditor.moveBottom": "行を下へ移動",
+    "MdTableEditor.moveRight": "カラムを右へ移動",
+
+
+    "MdTableEditor.focusLeft": "左にフォーカス",
+    "MdTableEditor.focusTop": "上にフォーカス",
+    "MdTableEditor.focusBottom": "下にフォーカス",
+    "MdTableEditor.focusRight": "右にフォーカス",
+
+    "MdTableEditor.columnSelect": "カラムの有効なセルを選択",
+    "MdTableEditor.columnSelectAll": "カラムのセルを選択",
+    "MdTableEditor.columnSelectEmpty": "カラムで空白のセルを選択",
+
+    "MdTableEditor.sortNumberAsc": "数字を昇順で並び替え",
+    "MdTableEditor.sortNumberDesc": "数字を降順で並び替え",
+    "MdTableEditor.sortTextAsc": "テキストを昇順で並び替え",
+    "MdTableEditor.sortTextDesc": "テキストを降順で並び替え",
+    "MdTableEditor.sortTextAsc.ignore": "テキストを昇順で並び替え(大文字と小文字を区別しない)",
+    "MdTableEditor.sortTextDesc.ignore": "テキストを降順で並び替え(大文字と小文字を区別しない)",
+
+
+    "MdTableEditor.Config.isDebugMode": "現在作りかけの機能を有効にする",
+    "MdTableEditor.Config.isIconMenuEnabled": "アイコンメニューを表示",
+    "MdTableEditor.Config.isAutoFormatterEnabled": "mdtableeditor.isDebugModeが有効な時、自動フォーマットを有効にしますが、現在、動作不安定です。",
+    "MdTableEditor.Config.isTreeViewEnabled": "Markdown テーブルエクスプローラを表示します(現在作りかけのためほぼ期待通りの動作しません)",
+    "MdTableEditor.Config.isHighlighterEnabled": "ハイライトを有効化する",
+
+    "MdTableEditor.Labels.MarkdownTableExplorer": "Markdown テーブルエクスプローラ"
+
+}

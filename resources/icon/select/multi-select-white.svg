@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" width="256" height="256" viewBox="0 0 256.00 256.00" enable-background="new 0 0 256.00 256.00" xml:space="preserve">
+	<path fill="#FFFFFF" fill-opacity="1" stroke-linejoin="round" d="M 27,16.0009L 56.9995,16.0009C 58.6563,16.0009 59.9995,17.3441 59.9995,19.0009L 59.9995,114C 59.9995,115.657 58.6563,117 56.9995,117L 27,117C 25.3432,117 24,115.657 24,114L 24,19.0009C 24,17.3441 25.3432,16.0009 27,16.0009 Z "/>
+	<path fill="#FFFFFF" fill-opacity="1" stroke-linejoin="round" d="M 27.0001,138L 57,138C 58.6569,138 60,139.343 60,141L 60,237C 60,238.656 58.6569,240 57,240L 27.0001,240C 25.3433,240 24.0001,238.656 24.0001,237L 24.0001,141C 24.0001,139.343 25.3433,138 27.0001,138 Z "/>
+	<path fill="#FFFFFF" fill-opacity="1" stroke-linejoin="round" d="M 220.733,240L 192.69,240L 183.437,217.297L 135.114,217.297L 125.835,240L 99,240L 145.061,135L 174.672,135L 220.733,240 Z M 176.446,200.27L 159.301,158.323L 142.182,200.27L 176.446,200.27 Z "/>
+	<path fill="#000000" fill-opacity="1" stroke-linejoin="round" d="M 37,24.0001L 47,24.0001C 48.6568,24.0001 49.9999,25.3433 49.9999,27.0001L 49.9999,103C 49.9999,104.657 48.6568,106 47,106L 37,106C 35.3431,106 34,104.657 34,103L 34,27.0001C 34,25.3433 35.3431,24.0001 37,24.0001 Z "/>
+</svg>
