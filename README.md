@@ -119,8 +119,15 @@ June 06, 2020 A memorable release date♪
 
 -------------------------------------------------- -------------------------------------------------- -------
 
+## Thanks
 
+Icon materials(part): https://icooon-mono.com/
+
+
+
+## Meeeeeeeeeeeeeeee!
 
 Developer HP: https://incre-clover.net
 
 Developer Twitter: https://twitter.com/clover_plpl
+

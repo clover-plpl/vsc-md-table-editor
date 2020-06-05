@@ -116,11 +116,15 @@ Auto Formatterは内部でsetTimeout()を使用しており、キーボード入
 
 
 -----------------------------------------------------------------------------------------------------------
+## Thanks
+
+Icon materials(一部): https://icooon-mono.com/
 
 
 
-開発者HP： https://incre-clover.net
+## Meeeeeeeeeeeeeeee!
 
-開発者Twitter: https://twitter.com/clover_plpl
+Developer HP: https://incre-clover.net
 
+Developer Twitter: https://twitter.com/clover_plpl
 
