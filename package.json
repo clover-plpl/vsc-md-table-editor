@@ -3,7 +3,7 @@
 	"displayName": "MdTableEditor",
 	"description": "Edit Markdown. format, move, remove, text or number sort(column only), multi select(column only), highlight the column and row",
 	"icon": "resources/app.png",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"preview": true,
 	"publisher": "clover",
 	"keywords": [
