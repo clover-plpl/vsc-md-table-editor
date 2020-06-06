@@ -1,6 +1,6 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-import { CompletionItem, languages, ExtensionContext } from 'vscode';
+import { CompletionItem, languages, ExtensionContext, TextDocument, Position } from 'vscode';
 import { MdTableEditor } from './MdTableEditor';
 let mdTableEditor: MdTableEditor | undefined;
 
@@ -16,12 +16,12 @@ export async function activate(context: ExtensionContext)
 	{
 		console.log(err);
 	}
-
+	
 	// TODO: 緊急追加、いづれ適切な場所に移す。
 	context.subscriptions.push(languages.registerCompletionItemProvider(
 		'markdown',
 		{
-			provideCompletionItems: (doc, pos, token, context) =>
+			provideCompletionItems: (doc: TextDocument, pos: Position) =>
 			{
 				if(pos.character === 2)
 				{
