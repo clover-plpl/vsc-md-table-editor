@@ -1,4 +1,4 @@
-# Markdown Table Editor
+# MdTableEditor
 
 テーブルの編集
 

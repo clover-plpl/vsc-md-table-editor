@@ -1,6 +1,6 @@
 {
 	"name": "md-table-editor",
-	"displayName": "Markdown Table Editor",
+	"displayName": "MdTableEditor",
 	"description": "Edit Markdown. format, move, remove, text or number sort(column only), multi select(column only), highlight the column and row",
 	"icon": "resources/app.png",
 	"version": "0.0.1",

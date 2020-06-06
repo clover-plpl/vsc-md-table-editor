@@ -1,4 +1,4 @@
-# Markdown Table Editor
+# MdTableEditor
 
 **I use a translator.**
 
