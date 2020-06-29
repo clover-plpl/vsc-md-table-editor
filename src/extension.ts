@@ -44,14 +44,16 @@ export async function activate(context: ExtensionContext)
 								alignment,
 								...[...Array(len).keys()].map(_ => row)
 							]
-
+							
 							// TODO: 改行コードってそのまま挿入するのまずそう、フォーマッターもそうだけど、検証が必要。
 							.join("\n");
+
+							const doc = table.replace(/   /g, ' A ');
 
 							return <CompletionItem>{
 								label: `${nbr}x${len}`,
 								detail: `Create a new table.`,
-								documentation: table.replace(/   /g, ' A '),
+								documentation: doc,
 								insertText: table
 							};
 						});						
