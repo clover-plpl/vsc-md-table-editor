@@ -13,6 +13,7 @@ import { DefaultCommandFactory } from "../../MdTableEditor/src/app/DefaultComman
 import { FormatterContext } from "../../MdTableEditor/src/app/FormatterContext";
 import { IFormatterMethods } from "../../MdTableEditor/src/interfaces/IFormatterMethods";
 import { IFormatterContext } from "../../MdTableEditor/src/interfaces/IFormatterContext";
+import { CommandView } from "./CommandView";
 
 export class MdTableEditor extends AppMain
 {
@@ -29,7 +30,8 @@ export class MdTableEditor extends AppMain
         
         // 設定ファイルの変更があったらsetContextに反映
         context.subscriptions.push(
-            new VscConfigContextUpdater(this.config)
+            new VscConfigContextUpdater(this.config),
+            new CommandView(this.config)
         );
 
         // テーブルエクスプローラの初期化
@@ -85,6 +87,15 @@ export class MdTableEditor extends AppMain
         }
     }
 
+    
+    protected onCurrentTableChanged(nv: MarkdownTableContent | undefined, ov: MarkdownTableContent | undefined)
+    {
+        commands.executeCommand('setContext', 'MdTableEditor.isIconMenuEnabled', !!nv);
+
+        super.onCurrentTableChanged(nv, ov);
+    }
+
+    
     public dispose(): void
     {
         Disposable.from(...this.context.subscriptions).dispose();
@@ -172,6 +183,7 @@ class VscCommandRegister
 		commandsFactories.set('MdTableEditor.sortTextDesc', c => factory.createTextSortDesc(c));
 		commandsFactories.set('MdTableEditor.sortTextAsc.ignore', c => factory.createTextSortAscIgnore(c));
         commandsFactories.set('MdTableEditor.sortTextDesc.ignore', c => factory.createTextSortDescIgnore(c));
+
         
         const commands = new Map([...commandsFactories.entries()].map(([commandName, commandFactory]) => {
             
@@ -422,7 +434,7 @@ class VscEventRegister
     
 }
 
-class GlobalCommands implements Disposable
+class GlobalCommands implements Disposable, IAppCommandStateUpdatable
 {
 
     private disc: Array<Disposable> = [];

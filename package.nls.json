@@ -45,5 +45,9 @@
     "MdTableEditor.Config.isTreeViewEnabled": "Show Markdown table explorer",
     "MdTableEditor.Config.isHighlighterEnabled": "Enable highlight",
     
-    "MdTableEditor.Labels.MarkdownTableExplorer": "Markdown Table Explorer"
+    "MdTableEditor.Labels.MarkdownTableExplorer": "Markdown Table Explorer",
+
+    
+    "MdTableEditor.setToolbarCommandVisibility": "select toolbar icons",
+    "MdTableEditor.setContextCommandVisibility": "select context menus"
 }

@@ -1,13 +1,11 @@
 # MdTableEditor
 
-**I use a translator.**
-
-**I use a translator.**
+Edit table
 
 
 ## Features
 
-Supports Markdown table editing.
+Supports markdown table editing.
 
 
 
@@ -54,7 +52,7 @@ If you enter two or more digits, it will not respond.
 ![sort](./readme-images/sort.gif)
 
 Non-numeric rows are ignored when doing a numeric sort.
-At the time of character string sorting, empty characters are also subject to sorting, but the specifications are undecided.
+At the time of character string sorting, blank characters are also subject to sorting, but the specifications are undecided.
 
 
 ### Multi Selection
@@ -75,6 +73,15 @@ It's not a bug, but the specification is undecided.
 The difference between the two command icons is whether to fill empty cells.
 
 
+### selectable icons (TitleBar icons and Context menu icons)
+
+
+![select-icons](./readme-images/select-cmd.gif)
+
+* You can select the icon to be displayed as in the above example.
+* To select the item displayed in the context menu, you can set it by right-clicking while editing Markdown.
+
+Selecting a category will activate all menus belonging to it.
 
 
 ## Extension Settings
@@ -95,18 +102,12 @@ It will be abolished soon because it is made quite impossible.
 Reason.
 Auto Formatter internally uses setTimeout(), and the cursor position may shift depending on the timing of keyboard input.
 I was tenacious, but I couldn't solve it.
-I don't think it's the right way to go, but I didn't find it when I looked for a formal way.
-
-Side note: I really wanted to write it, really. I'm scared of lack of sleep orz
-
-
 
 
 
 ## Known Issues
 
-* Almost no Key Binding is set. It was a hassle to find out if it conflicted with another key.
-* There are many files, but we do not bundle them with WebPack because we do not have time.
+* Almost no Key Binding is set.
 
 
 ## Release Notes
@@ -117,17 +118,25 @@ Side note: I really wanted to write it, really. I'm scared of lack of sleep orz
 June 06, 2020 A memorable release date♪
 
 
--------------------------------------------------- -------------------------------------------------- -------
-
-## Thanks
-
-Icon materials(part): https://icooon-mono.com/
+### 0.0.2
 
 
+* Toolbar icons and context menus no longer appear when not in table edit mode.
+* You can now select the toolbar icon to display and the context menu.
+* Fixed multiple bugs with multibyte characters.
 
-## Meeeeeeeeeeeeeeee!
+
+-------------------------------------------------- -------------------------
+
+
+## Icon materials (partial):
+
+MONO: https://icooon-mono.com/
+
+
+
+## About me
 
 Developer HP: https://incre-clover.net
 
 Developer Twitter: https://twitter.com/clover_plpl
-

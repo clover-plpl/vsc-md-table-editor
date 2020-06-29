@@ -9,6 +9,7 @@ export class MdTableEditorConfig
 	public static readonly IS_AUTO_FORMATTER_ENABLED: string = 'isAutoFormatterEnabled';
 	public static readonly IS_TREE_VIEW_ENABLED: string = 'isTreeViewEnabled';
 	public static readonly IS_HIGHLIGHTER_ENABLED = 'isHighlighterEnabled';
+	public static readonly COMMAND_VIEWS = 'commandViews';
 
     private configChangedEmitter: EventEmitter<MdTableEditorConfig> = new EventEmitter();
     public readonly configChanged: Event<MdTableEditorConfig> = this.configChangedEmitter.event;
@@ -43,6 +44,33 @@ export class MdTableEditorConfig
 	public get isTreeViewEnabled(): boolean
 	{
 		return this.getBool(MdTableEditorConfig.IS_TREE_VIEW_ENABLED, false);
+	}
+
+	public get contextCommandViews(): string[]
+	{
+		return this.getCommandViews()?.['context'];
+	}
+
+	public get toolbarCommandViews(): string[]
+	{
+		return this.getCommandViews()?.['toolbar'];
+	}
+
+
+	public getCommandViews(): { context: string[], toolbar: string[] }
+	{
+		const obj = this.config.get<any>(MdTableEditorConfig.COMMAND_VIEWS, {});
+		const upd = {
+			toolbar: obj?.toolbar || [],
+			context: obj?.context || []
+		};
+		
+		return upd;
+	}
+
+	public async setCommandViews(value: { context: string[], toolbar: string[] }): Promise<void>
+	{
+		await this.config.update(MdTableEditorConfig.COMMAND_VIEWS, value, true);
 	}
 
 	private getBool(name: string, def: boolean): boolean

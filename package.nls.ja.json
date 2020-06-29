@@ -45,6 +45,9 @@
     "MdTableEditor.Config.isTreeViewEnabled": "Markdown テーブルエクスプローラを表示します(現在作りかけのためほぼ期待通りの動作しません)",
     "MdTableEditor.Config.isHighlighterEnabled": "ハイライトを有効化する",
 
-    "MdTableEditor.Labels.MarkdownTableExplorer": "Markdown テーブルエクスプローラ"
+    "MdTableEditor.Labels.MarkdownTableExplorer": "Markdown テーブルエクスプローラ",
+
+    "MdTableEditor.setToolbarCommandVisibility": "ツールバーに表示するアイコンを選択する",
+    "MdTableEditor.setContextCommandVisibility": "コンテキストメニューに表示する項目を選択する"
 
 }

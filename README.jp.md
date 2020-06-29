@@ -73,6 +73,15 @@ Example: input the `3x7` and Enter Key.
 ２つのコマンドアイコンの違いは空いたセルを埋めるかどうかです。
 
 
+### selectable icons (TitleBar icons and Context menu icons)
+
+
+![select-icons](./readme-images/select-cmd.gif)
+
+* 上の例のように表示するアイコンを選択出来ます。
+* コンテキストメニューに表示される項目を選択するにはMarkdown編集中に右クリックから設定できます。
+
+カテゴリを選択すると、それに属するメニュー全てを有効にします。
 
 
 ## Extension Settings
@@ -93,18 +102,12 @@ Auto FormatterはWindows以外で動作未確認です。
 理由。
 Auto Formatterは内部でsetTimeout()を使用しており、キーボード入力とのタイミングによりカーソル位置がズレることがあります。
 大分粘りましたが解決出来ませんでした。
-正しいやり方ではないと思うものの、正式な方法を探しても見つけきなかったためです。
-
-余談：ひゃっはーと書きたかったんだー、本当は。寝不足って怖いねorz
-
-
 
 
 
 ## Known Issues
 
-* Key Binding をほとんど設定してません。他のキーと競合してないか調べるのが面倒だったからです。
-* ファイル数が多いのですが、時間がないためWebPackによるバンドルはしてません。
+* Key Binding をほとんど設定してません。
 
 
 ## Release Notes
@@ -115,14 +118,24 @@ Auto Formatterは内部でsetTimeout()を使用しており、キーボード入
 2020/06/06 記念すべき公開日♪
 
 
------------------------------------------------------------------------------------------------------------
-## Thanks
-
-Icon materials(一部): https://icooon-mono.com/
+### 0.0.2
 
 
+* テーブル編集モードになっていない時にはツールバーのアイコンとコンテキストメニューは表示されなくなりました。
+* 表示するツールバーのアイコンとコンテキストメニューを選択出来るようになりました。
+* マルチバイト文字での複数のバグを修正しました。
 
-## Meeeeeeeeeeeeeeee!
+
+---------------------------------------------------------------------------
+
+
+## Icon materials(一部):
+
+MONO: https://icooon-mono.com/
+
+
+
+## About me
 
 Developer HP: https://incre-clover.net
 

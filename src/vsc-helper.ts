@@ -1,5 +1,6 @@
 import { window, Position, TextEditor, TextDocument, Range, Selection, TextEditorDecorationType, TextEditorRevealType } from "vscode";
 import { MarkdownTableContent } from "../../MdTableEditor/src/impls/MarkdownTableContent";
+import { StringCounter } from "../../MdTableEditor/src/StringCounter";
 
 export interface ITableData
 {
@@ -380,7 +381,8 @@ export class FocusDecorator
 
         if(info)
         {
-            for(const range of info.row.getCellRanges())
+            
+            for(const range of info.row.getCellRanges(str => StringCounter.stringCount(str)))
             {
                 if(!info.row.isFirstOrLast(range.cell))
                 {

@@ -4,6 +4,8 @@ import { CompletionItem, languages, ExtensionContext, TextDocument, Position } f
 import { MdTableEditor } from './MdTableEditor';
 let mdTableEditor: MdTableEditor | undefined;
 
+
+
 export async function activate(context: ExtensionContext)
 {
 
@@ -28,7 +30,7 @@ export async function activate(context: ExtensionContext)
 					const txt = doc.lineAt(pos.line).text.substr(0, 2);
 					const nbr = Number(txt.charAt(0));
 
-					if(nbr !== NaN && txt.charAt(1) === 'x')
+					if(!isNaN(nbr) && txt.charAt(1) === 'x')
 					{
 						return [...Array(9).keys()].map(_ => {
 

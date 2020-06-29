@@ -65,6 +65,23 @@
 						"type": "boolean",
 						"default": true,
 						"description": "%MdTableEditor.Config.isHighlighterEnabled%"
+					},
+					"mdtableeditor.commandViews": {
+						"type": "object",
+						"additionalProperties": {
+							"type": "array",
+							"items": {
+								"type": "string",
+								"enum": [
+									"format", "alignments", "insert", "remove", "move", "focus", "selection", "sort",
+									"MdTableEditor.beautifulFormat", "MdTableEditor.naturalFormat", "MdTableEditor.deleteComment", "MdTableEditor.fillCells", "MdTableEditor.changeAlignRight", "MdTableEditor.changeAlignCenter", "MdTableEditor.changeAlignLeft", "MdTableEditor.insertTop", "MdTableEditor.insertBottom", "MdTableEditor.insertLeft", "MdTableEditor.insertRight", "MdTableEditor.removeColumn", "MdTableEditor.removeRow", "MdTableEditor.moveTop", "MdTableEditor.moveBottom", "MdTableEditor.moveLeft", "MdTableEditor.moveRight", "MdTableEditor.focusLeft", "MdTableEditor.focusTop", "MdTableEditor.focusBottom", "MdTableEditor.focusRight", "MdTableEditor.columnSelect", "MdTableEditor.columnSelectAll", "MdTableEditor.columnSelectEmpty", "MdTableEditor.sortNumberAsc", "MdTableEditor.sortNumberDesc", "MdTableEditor.sortTextAsc", "MdTableEditor.sortTextDesc", "MdTableEditor.sortTextAsc.ignore", "MdTableEditor.sortTextDesc.ignore"
+								]
+							}
+						},
+						"default": {
+							"context": ["MdTableEditor.fillCells", "MdTableEditor.insertTop", "MdTableEditor.insertBottom", "MdTableEditor.insertLeft", "MdTableEditor.insertRight", "MdTableEditor.removeColumn", "MdTableEditor.removeRow", "MdTableEditor.columnSelectEmpty", "MdTableEditor.sortNumberAsc", "MdTableEditor.sortNumberDesc", "MdTableEditor.sortTextAsc.ignore", "MdTableEditor.sortTextDesc.ignore"],
+							"toolbar": ["MdTableEditor.fillCells", "MdTableEditor.changeAlignRight", "MdTableEditor.changeAlignCenter", "MdTableEditor.changeAlignLeft", "MdTableEditor.insertTop", "MdTableEditor.insertBottom", "MdTableEditor.insertLeft", "MdTableEditor.insertRight", "MdTableEditor.removeColumn", "MdTableEditor.removeRow", "MdTableEditor.moveTop", "MdTableEditor.moveBottom", "MdTableEditor.moveLeft", "MdTableEditor.moveRight", "MdTableEditor.columnSelectEmpty", "MdTableEditor.sortNumberAsc", "MdTableEditor.sortNumberDesc", "MdTableEditor.sortTextAsc.ignore", "MdTableEditor.sortTextDesc.ignore"]
+						}
 					}
 				}
 			}
@@ -335,7 +352,18 @@
 			{
 				"command": "MdTableEditor.scroll",
 				"title": "スクロール"
+			},
+
+
+			{
+				"command": "MdTableEditor.setToolbarCommandVisibility",
+				"title": "%MdTableEditor.setToolbarCommandVisibility%"
+			},
+			{
+				"command": "MdTableEditor.setContextCommandVisibility",
+				"title": "%MdTableEditor.setContextCommandVisibility%"
 			}
+
 		],
 		"keybindings": [
 			{
@@ -368,254 +396,262 @@
 				{
 					"group": "MdTableEditor.edit",
 					"command": "MdTableEditor.fillCells",
-					"when": "editorLangId == markdown && MdTableEditor.fillCells"
+					"when": "editorLangId == markdown && MdTableEditor.visibled && MdTableEditor.fillCells-context"
 				},
 				{
 					"group": "MdTableEditor.edit",
 					"command": "MdTableEditor.beautifulFormat",
-					"when": "editorLangId == markdown && MdTableEditor.beautifulFormat"
+					"when": "editorLangId == markdown && MdTableEditor.visibled && MdTableEditor.beautifulFormat-context"
 				},
 				{
 					"group": "MdTableEditor.edit",
 					"command": "MdTableEditor.naturalFormat",
-					"when": "editorLangId == markdown && MdTableEditor.naturalFormat"
+					"when": "editorLangId == markdown && MdTableEditor.visibled && MdTableEditor.naturalFormat-context"
 				},
 				{
 					"group": "MdTableEditor.edit",
 					"command": "MdTableEditor.deleteComment",
-					"when": "editorLangId == markdown && MdTableEditor.deleteComment"
+					"when": "editorLangId == markdown && MdTableEditor.visibled && MdTableEditor.deleteComment-context"
 				},
 				{
 					"group": "MdTableEditor.move",
 					"command": "MdTableEditor.moveLeft",
-					"when": "editorLangId == markdown && MdTableEditor.moveLeft"
+					"when": "editorLangId == markdown && MdTableEditor.moveLeft && MdTableEditor.moveLeft-context"
 				},
 				{
 					"group": "MdTableEditor.move",
 					"command": "MdTableEditor.moveTop",
-					"when": "editorLangId == markdown && MdTableEditor.moveTop"
+					"when": "editorLangId == markdown && MdTableEditor.moveTop && MdTableEditor.moveTop-context"
 				},
 				{
 					"group": "MdTableEditor.move",
 					"command": "MdTableEditor.moveBottom",
-					"when": "editorLangId == markdown && MdTableEditor.moveBottom"
+					"when": "editorLangId == markdown && MdTableEditor.moveBottom && MdTableEditor.moveBottom-context"
 				},
 				{
 					"group": "MdTableEditor.move",
 					"command": "MdTableEditor.moveRight",
-					"when": "editorLangId == markdown && MdTableEditor.moveRight"
+					"when": "editorLangId == markdown && MdTableEditor.moveRight && MdTableEditor.moveRight-context"
 				},
 				{
 					"group": "MdTableEditor.changeAlign",
 					"command": "MdTableEditor.changeAlignRight",
-					"when": "editorLangId == markdown && MdTableEditor.changeAlignRight"
+					"when": "editorLangId == markdown && MdTableEditor.changeAlignRight && MdTableEditor.changeAlignRight-context"
 				},
 				{
 					"group": "MdTableEditor.changeAlign",
 					"command": "MdTableEditor.changeAlignCenter",
-					"when": "editorLangId == markdown && MdTableEditor.changeAlignCenter"
+					"when": "editorLangId == markdown && MdTableEditor.changeAlignCenter && MdTableEditor.changeAlignCenter-context"
 				},
 				{
 					"group": "MdTableEditor.changeAlign",
 					"command": "MdTableEditor.changeAlignLeft",
-					"when": "editorLangId == markdown && MdTableEditor.changeAlignLeft"
+					"when": "editorLangId == markdown && MdTableEditor.changeAlignLeft && MdTableEditor.changeAlignLeft-context"
 				},
 				{
 					"group": "MdTableEditor.insert",
 					"command": "MdTableEditor.insertTop",
-					"when": "editorLangId == markdown && MdTableEditor.insertTop"
+					"when": "editorLangId == markdown && MdTableEditor.insertTop && MdTableEditor.insertTop-context"
 				},
 				{
 					"group": "MdTableEditor.insert",
 					"command": "MdTableEditor.insertBottom",
-					"when": "editorLangId == markdown && MdTableEditor.insertBottom"
+					"when": "editorLangId == markdown && MdTableEditor.insertBottom && MdTableEditor.insertBottom-context"
 				},
 				{
 					"group": "MdTableEditor.insert",
 					"command": "MdTableEditor.insertLeft",
-					"when": "editorLangId == markdown && MdTableEditor.insertLeft"
+					"when": "editorLangId == markdown && MdTableEditor.insertLeft && MdTableEditor.insertLeft-context"
 				},
 				{
 					"group": "MdTableEditor.insert",
 					"command": "MdTableEditor.insertRight",
-					"when": "editorLangId == markdown && MdTableEditor.insertRight"
+					"when": "editorLangId == markdown && MdTableEditor.insertRight && MdTableEditor.insertRight-context"
 				},
 				{
 					"group": "MdTableEditor.columnSelect",
 					"command": "MdTableEditor.columnSelect",
-					"when": "editorLangId == markdown && MdTableEditor.columnSelect"
+					"when": "editorLangId == markdown && MdTableEditor.columnSelect && MdTableEditor.columnSelect-context"
 				},
 				{
 					"group": "MdTableEditor.columnSelect",
 					"command": "MdTableEditor.columnSelectAll",
-					"when": "editorLangId == markdown && MdTableEditor.columnSelectAll"
+					"when": "editorLangId == markdown && MdTableEditor.columnSelectAll && MdTableEditor.columnSelectAll-context"
 				},
 				{
 					"group": "MdTableEditor.columnSelect",
 					"command": "MdTableEditor.columnSelectEmpty",
-					"when": "editorLangId == markdown && MdTableEditor.columnSelectEmpty"
+					"when": "editorLangId == markdown && MdTableEditor.columnSelectEmpty && MdTableEditor.columnSelectEmpty-context"
 				},
 				{
 					"group": "MdTableEditor.remove",
 					"command": "MdTableEditor.removeColumn",
-					"when": "editorLangId == markdown && MdTableEditor.removeColumn"
+					"when": "editorLangId == markdown && MdTableEditor.removeColumn && MdTableEditor.removeColumn-context"
 				},
 				{
 					"group": "MdTableEditor.remove",
 					"command": "MdTableEditor.removeRow",
-					"when": "editorLangId == markdown && MdTableEditor.removeRow"
+					"when": "editorLangId == markdown && MdTableEditor.removeRow && MdTableEditor.removeRow-context"
 				},
 				{
 					"group": "MdTableEditor.sort",
 					"command": "MdTableEditor.sortNumberAsc",
-					"when": "editorLangId == markdown && MdTableEditor.sortNumberAsc"
+					"when": "editorLangId == markdown && MdTableEditor.sortNumberAsc && MdTableEditor.sortNumberAsc-context"
 				},
 				{
 					"group": "MdTableEditor.sort",
 					"command": "MdTableEditor.sortNumberDesc",
-					"when": "editorLangId == markdown && MdTableEditor.sortNumberDesc"
+					"when": "editorLangId == markdown && MdTableEditor.sortNumberDesc && MdTableEditor.sortNumberDesc-context"
 				},
 				{
 					"group": "MdTableEditor.sortText",
 					"command": "MdTableEditor.sortTextAsc",
-					"when": "editorLangId == markdown && MdTableEditor.sortTextAsc"
+					"when": "editorLangId == markdown && MdTableEditor.sortTextAsc && MdTableEditor.sortTextAsc-context"
 				},
 				{
 					"group": "MdTableEditor.sortText",
 					"command": "MdTableEditor.sortTextDesc",
-					"when": "editorLangId == markdown && MdTableEditor.sortTextDesc"
+					"when": "editorLangId == markdown && MdTableEditor.sortTextDesc && MdTableEditor.sortTextDesc-context"
 				},
 				{
 					"group": "MdTableEditor.sortText",
 					"command": "MdTableEditor.sortTextAsc.ignore",
-					"when": "editorLangId == markdown && MdTableEditor.sortTextAsc.ignore"
+					"when": "editorLangId == markdown && MdTableEditor.sortTextAsc.ignore && MdTableEditor.sortTextAsc.ignore-context"
 				},
 				{
 					"group": "MdTableEditor.sortText",
 					"command": "MdTableEditor.sortTextDesc.ignore",
-					"when": "editorLangId == markdown && MdTableEditor.sortTextDesc.ignore"
+					"when": "editorLangId == markdown && MdTableEditor.sortTextDesc.ignore && MdTableEditor.sortTextDesc.ignore-context"
+				},
+				{
+					"command": "MdTableEditor.setContextCommandVisibility",
+					"when": "editorLangId == markdown"
 				}
 			],
 			"editor/title": [
 				{
 					"command": "MdTableEditor.fillCells",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.fillCells-toolbar",
 					"group": "navigation@101"
 				},
 				{
 					"command": "MdTableEditor.beautifulFormat",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.beautifulFormat-toolbar",
 					"group": "navigation@102"
 				},
 				{
 					"command": "MdTableEditor.changeAlignLeft",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.changeAlignLeft-toolbar",
 					"group": "navigation@201"
 				},
 				{
 					"command": "MdTableEditor.changeAlignCenter",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.changeAlignCenter-toolbar",
 					"group": "navigation@202"
 				},
 				{
 					"command": "MdTableEditor.changeAlignRight",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.changeAlignRight-toolbar",
 					"group": "navigation@203"
 				},
 				{
 					"command": "MdTableEditor.moveLeft",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.moveLeft-toolbar",
 					"group": "navigation@301"
 				},
 				{
 					"command": "MdTableEditor.moveTop",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.moveTop-toolbar",
 					"group": "navigation@302"
 				},
 				{
 					"command": "MdTableEditor.moveBottom",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.moveBottom-toolbar",
 					"group": "navigation@303"
 				},
 				{
 					"command": "MdTableEditor.moveRight",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.moveRight-toolbar",
 					"group": "navigation@304"
 				},
 				{
 					"command": "MdTableEditor.insertLeft",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.insertLeft-toolbar",
 					"group": "navigation@401"
 				},
 				{
 					"command": "MdTableEditor.insertTop",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.insertTop-toolbar",
 					"group": "navigation@402"
 				},
 				{
 					"command": "MdTableEditor.insertBottom",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.insertBottom-toolbar",
 					"group": "navigation@403"
 				},
 				{
 					"command": "MdTableEditor.insertRight",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.insertRight-toolbar",
 					"group": "navigation@404"
 				},
 				{
 					"command": "MdTableEditor.removeRow",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.removeRow-toolbar",
 					"group": "navigation@601"
 				},
 				{
 					"command": "MdTableEditor.removeColumn",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.removeColumn-toolbar",
 					"group": "navigation@601"
 				},
 				{
 					"command": "MdTableEditor.sortNumberAsc",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.sortNumberAsc-toolbar",
 					"group": "navigation@701"
 				},
 				{
 					"command": "MdTableEditor.sortNumberDesc",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.sortNumberDesc-toolbar",
 					"group": "navigation@702"
 				},
 				{
 					"command": "MdTableEditor.sortTextAsc.ignore",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.sortTextAsc.ignore-toolbar",
 					"group": "navigation@703"
 				},
 				{
 					"command": "MdTableEditor.sortTextDesc.ignore",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.sortTextDesc.ignore-toolbar",
 					"group": "navigation@704"
 				},
 				{
 					"command": "MdTableEditor.sortTextAsc",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.sortTextAsc-toolbar",
 					"group": "navigation@705"
 				},
 				{
 					"command": "MdTableEditor.sortTextDesc",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.sortTextDesc-toolbar",
 					"group": "navigation@706"
 				},
 				{
 					"command": "MdTableEditor.columnSelect",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.columnSelect-toolbar",
 					"group": "navigation@801"
 				},
 				{
 					"command": "MdTableEditor.columnSelectAll",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.columnSelectAll-toolbar",
 					"group": "navigation@802"
 				},
 				{
 					"command": "MdTableEditor.columnSelectEmpty",
-					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled",
+					"when": "editorLangId == markdown && MdTableEditor.isIconMenuEnabled && MdTableEditor.columnSelectEmpty-toolbar",
 					"group": "navigation@803"
+				},
+				{
+					"command": "MdTableEditor.setToolbarCommandVisibility",
+					"when": "editorLangId == markdown"
 				}
 			]
 		}
