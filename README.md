@@ -3,6 +3,18 @@
 Edit table
 
 
+## GitHub Document links
+
+
+https://github.com/clover-plpl/vsc-md-table-editor/blob/master/README.md
+
+
+えーと、日本語はこっち。
+
+https://github.com/clover-plpl/vsc-md-table-editor/blob/master/README.jp.md
+
+
+
 ## Features
 
 Supports markdown table editing.
